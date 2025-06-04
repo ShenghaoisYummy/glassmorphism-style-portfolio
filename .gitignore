@@ -1,1 +1,14 @@
+node_modules
+.next
+.env.local
+.env
+dist
+build
+*.log
+.DS_Store
 .vscode
+.idea
+
+# Legacy assets from original portfolio (exclude from linting)
+public/assets/js/
+public/assets/css/

@@ -1,0 +1,200 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #acb7e1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4577af;
+  border-radius: 10px;
+}
+
+/* Wave Animation */
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-wave {
+  animation: wave-animation 2.5s infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+/* Floating Animation for Shapes */
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.floating-shape {
+  animation: floating 3s ease-in-out infinite;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* DevIcon Hover Effects */
+.devicon-c-plain:hover {
+  color: #03599c !important;
+}
+.devicon-cplusplus-plain:hover {
+  color: #9c033a !important;
+}
+.devicon-html5-plain:hover {
+  color: #e54d26 !important;
+}
+.devicon-css3-plain:hover {
+  color: #3d8fc6 !important;
+}
+.devicon-javascript-plain:hover {
+  color: #f0db4f !important;
+}
+.devicon-python-plain:hover {
+  color: #ffd845 !important;
+}
+.devicon-flask-plain:hover {
+  color: #010101 !important;
+}
+.devicon-linux-plain:hover {
+  color: #000 !important;
+}
+
+/* Page scroll indicator */
+.page-scroll {
+  scroll-margin-top: 100px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Experience card hover effects */
+.experience-card {
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Project card hover effects */
+.project-card {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Button animations */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border-2 border-blue-500 text-blue-500 rounded-lg font-medium hover:bg-blue-500 hover:text-white transition-all duration-300;
+}
+
+/* Social icons */
+.social-icon {
+  @apply w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg;
+}
+
+.social-icon.github {
+  @apply bg-gray-800 hover:bg-gray-700;
+}
+.social-icon.linkedin {
+  @apply bg-blue-600 hover:bg-blue-500;
+}
+.social-icon.facebook {
+  @apply bg-blue-800 hover:bg-blue-700;
+}
+.social-icon.instagram {
+  @apply bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .glass-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .floating-shape {
+    display: none;
+  }
+}
