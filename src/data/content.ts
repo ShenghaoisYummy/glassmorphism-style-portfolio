@@ -42,12 +42,12 @@ export const personalInfo: PersonalInfo = {
   title: "Hi all, I'm Shenghao",
   description:
     'I love software development, machine learning and deep learning. I know a little bit of Web Dev too and Flutter! Want to discuss regarding any project or just want to say a Hi? I am always available to listen you :)',
-  blogUrl: 'https://your-blog-url.com', // Replace with your actual blog URL
+  blogUrl: 'https://github.com/ShenghaoisYummy', // Replace with your actual blog URL
   socialLinks: {
     github: 'https://github.com/ShenghaoisYummy',
-    linkedin: 'https://linkedin.com/in/your-linkedin-profile',
+    linkedin: 'https://www.linkedin.com/in/austin-xu-272586160/',
     facebook: 'https://facebook.com/your-profile',
-    instagram: 'https://instagram.com/your-profile',
+    instagram: 'https://www.instagram.com/shenghaoyummy',
   },
 };
 
