@@ -22,6 +22,7 @@ const SkillsSection = () => {
               alt="Developer GIF"
               width={320}
               height={320}
+              priority={true}
               unoptimized
               className="w-80 h-80 object-cover rounded-lg"
             />
@@ -71,7 +72,7 @@ const SkillsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-xl lg:text-2xl text-gray-600 font-normal mb-8"
+              className="text-xxl lg:text-2xl text-gray-600 font-normal mb-8"
             >
               I love all aspects of technology and want to explore as much as I
               can!
@@ -83,22 +84,22 @@ const SkillsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-12 -ml-4"
             >
-              <ul className="flex flex-wrap gap-6 text-5xl">
+              <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-6 justify-items-start">
                 {skills.map((skill, index) => (
-                  <motion.li
+                  <motion.div
                     key={skill.name}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="group flex flex-col items-center space-y-2 cursor-pointer"
+                    className="group flex flex-col items-center justify-center space-y-2 cursor-pointer w-20 h-20"
                   >
-                    <div className="relative">
+                    <div className="relative flex items-center justify-center w-12 h-12">
                       {/* DevIcon */}
                       <i
-                        className={`${skill.icon} text-gray-500 group-hover:text-[var(--hover-color)] transition-colors duration-300`}
+                        className={`${skill.icon} text-4xl text-gray-500 group-hover:text-[var(--hover-color)] transition-colors duration-300`}
                         style={
                           {
                             '--hover-color': skill.hoverColor,
@@ -106,12 +107,12 @@ const SkillsSection = () => {
                         }
                       ></i>
                     </div>
-                    <p className="text-xs text-gray-500 group-hover:text-purple-600 transition-colors duration-300 font-medium">
+                    <p className="text-xs text-gray-500 group-hover:text-purple-600 transition-colors duration-300 font-medium text-center leading-tight">
                       {skill.name}
                     </p>
-                  </motion.li>
+                  </motion.div>
                 ))}
-              </ul>
+              </div>
             </motion.div>
 
             {/* Feature Points */}
@@ -133,10 +134,11 @@ const SkillsSection = () => {
                 >
                   <Image
                     alt="⚡"
-                    src="https://twemoji.maxcdn.com/2/72x72/26a1.png"
+                    src="/assets/icons8-lightning-48.png"
                     width={20}
                     height={20}
-                    className="w-5 h-5 mr-3 mt-1 flex-shrink-0"
+                    className="w-8 h-8 mr-3 mt-1 flex-shrink-0"
+                    priority={false}
                   />
                   {text}
                 </p>

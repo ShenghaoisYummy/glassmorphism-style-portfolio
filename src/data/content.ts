@@ -53,40 +53,58 @@ export const personalInfo: PersonalInfo = {
 
 export const skills: Skill[] = [
   {
-    name: 'C',
-    icon: 'devicon-c-plain',
-    category: 'language',
-    hoverColor: '#03599c',
-  },
-  {
-    name: 'C++',
-    icon: 'devicon-cplusplus-plain',
-    category: 'language',
-    hoverColor: '#9c033a',
-  },
-  {
-    name: 'HTML5',
-    icon: 'devicon-html5-plain',
-    category: 'frontend',
-    hoverColor: '#e54d26',
-  },
-  {
-    name: 'CSS3',
-    icon: 'devicon-css3-plain',
-    category: 'frontend',
-    hoverColor: '#3d8fc6',
-  },
-  {
-    name: 'JavaScript',
-    icon: 'devicon-javascript-plain',
-    category: 'language',
-    hoverColor: '#f0db4f',
-  },
-  {
     name: 'Python',
     icon: 'devicon-python-plain',
     category: 'language',
     hoverColor: '#ffd845',
+  },
+  {
+    name: 'TypeScript',
+    icon: 'devicon-typescript-plain',
+    category: 'language',
+    hoverColor: '#3178c6',
+  },
+  {
+    name: 'Tailwind',
+    icon: 'devicon-tailwindcss-plain',
+    category: 'language',
+    hoverColor: '#38bdf8',
+  },
+  {
+    name: 'C#',
+    icon: 'devicon-csharp-plain',
+    category: 'language',
+    hoverColor: '#239120',
+  },
+  {
+    name: 'React',
+    icon: 'devicon-react-plain',
+    category: 'frontend',
+    hoverColor: '#61dafb',
+  },
+  {
+    name: 'Redux',
+    icon: 'devicon-redux-plain',
+    category: 'frontend',
+    hoverColor: '#764abc',
+  },
+  {
+    name: 'Next.js',
+    icon: 'devicon-nextjs-plain',
+    category: 'frontend',
+    hoverColor: '#000000',
+  },
+  {
+    name: '.NET',
+    icon: 'devicon-dotnetcore-plain',
+    category: 'language',
+    hoverColor: '#5c2d91',
+  },
+  {
+    name: 'Node.js',
+    icon: 'devicon-nodejs-plain',
+    category: 'language',
+    hoverColor: '#393939',
   },
   {
     name: 'Flask',
@@ -95,10 +113,40 @@ export const skills: Skill[] = [
     hoverColor: '#010101',
   },
   {
-    name: 'Linux',
-    icon: 'devicon-linux-plain',
+    name: 'GraphQL',
+    icon: 'devicon-graphql-plain',
+    category: 'language',
+    hoverColor: '#e10098',
+  },
+  {
+    name: 'PostgreSQL',
+    icon: 'devicon-postgresql-plain',
+    category: 'database',
+    hoverColor: '#31648c',
+  },
+  {
+    name: 'MongoDB',
+    icon: 'devicon-mongodb-plain',
+    category: 'database',
+    hoverColor: '#47a248',
+  },
+  {
+    name: 'Docker',
+    icon: 'devicon-docker-plain',
     category: 'tools',
-    hoverColor: '#000',
+    hoverColor: '#2496ed',
+  },
+  {
+    name: 'GitHub Actions',
+    icon: 'devicon-githubactions-plain',
+    category: 'tools',
+    hoverColor: '#24292e',
+  },
+  {
+    name: 'AWS',
+    icon: 'devicon-amazonwebservices-plain',
+    category: 'tools',
+    hoverColor: '#ff9900',
   },
 ];
 
