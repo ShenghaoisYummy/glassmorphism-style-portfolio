@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Developer Portfolio centered around GlassMorphic UI',
   keywords:
     'Developer, Portfolio, HTML, CSS, JS, GlassMorphic, Glassmorphic, GlassMorphism, Glassmorphism, UI',
-  authors: [{ name: 'Shenghao Xu' }],
+  authors: [{ name: 'Austin Xu' }],
 };
 
 export const viewport: Viewport = {

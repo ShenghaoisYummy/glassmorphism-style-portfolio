@@ -96,8 +96,9 @@ const ExperienceSection = () => {
           className="text-4xl lg:text-5xl font-bold text-center mb-12"
         >
           <span className="relative inline-block">
-            <span className="relative z-10 text-white">Experience</span>
-            <span className="absolute inset-0 bg-orange-300 rounded-lg transform -skew-y-1 filter blur-sm opacity-80"></span>
+            <span className="tracking-[2px] px-[5px] bg-gradient-to-b from-transparent from-50% to-[#fff5b7] to-50%">
+              <span className="text-black">Experience</span>
+            </span>
           </span>
         </motion.h2>
 

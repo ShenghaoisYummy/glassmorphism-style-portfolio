@@ -144,8 +144,9 @@ const ProjectsSection = () => {
           className="text-4xl lg:text-5xl font-bold text-center mb-12"
         >
           <span className="relative inline-block">
-            <span className="relative z-10 text-white">Projects</span>
-            <span className="absolute inset-0 bg-cyan-400 rounded-lg transform -skew-y-1 filter blur-sm opacity-80"></span>
+            <span className="tracking-[2px] px-[5px] bg-gradient-to-b from-transparent from-50% to-[#00ead3] to-50%">
+              <span className="text-black">Projects</span>
+            </span>
           </span>
         </motion.h2>
 

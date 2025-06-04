@@ -61,9 +61,8 @@ const SkillsSection = () => {
               viewport={{ once: true }}
               className="text-4xl lg:text-5xl font-bold mb-6"
             >
-              <span className="relative inline-block">
-                <span className="relative z-10 text-white">What I do</span>
-                <span className="absolute inset-0 bg-pink-400 rounded-lg transform -skew-y-1 filter blur-sm opacity-80"></span>
+              <span className="tracking-[2px] px-[5px] bg-gradient-to-b from-transparent from-50% to-[#ff6db7] to-50%">
+                <span className="text-black">What I do</span>
               </span>
             </motion.h2>
 

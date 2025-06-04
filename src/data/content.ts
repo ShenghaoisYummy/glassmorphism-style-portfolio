@@ -37,9 +37,9 @@ export interface PersonalInfo {
 }
 
 export const personalInfo: PersonalInfo = {
-  name: 'Shenghao',
-  logo: 'Shenghao',
-  title: "Hi all, I'm Shenghao",
+  name: 'Austin Xu',
+  logo: 'Austin Xu',
+  title: "Hi all, I'm Austin",
   description:
     'I love software development, machine learning and deep learning. I know a little bit of Web Dev too and Flutter! Want to discuss regarding any project or just want to say a Hi? I am always available to listen you :)',
   blogUrl: 'https://github.com/ShenghaoisYummy', // Replace with your actual blog URL
