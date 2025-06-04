@@ -31,7 +31,7 @@ export interface PersonalInfo {
   socialLinks: {
     github: string;
     linkedin: string;
-    facebook: string;
+    X: string;
     instagram: string;
   };
 }
@@ -46,7 +46,7 @@ export const personalInfo: PersonalInfo = {
   socialLinks: {
     github: 'https://github.com/ShenghaoisYummy',
     linkedin: 'https://www.linkedin.com/in/austin-xu-272586160/',
-    facebook: 'https://facebook.com/your-profile',
+    X: 'https://x.com/praisesunshinee?s=21',
     instagram: 'https://www.instagram.com/shenghaoyummy',
   },
 };

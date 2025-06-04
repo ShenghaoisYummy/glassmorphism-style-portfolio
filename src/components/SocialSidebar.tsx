@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGithub,
   faLinkedin,
-  faFacebook,
   faInstagram,
+  faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { personalInfo } from '@/data/content';
 
@@ -25,10 +25,10 @@ const SocialSidebar = () => {
       color: 'hover:bg-blue-600',
     },
     {
-      name: 'Facebook',
-      icon: faFacebook,
-      url: personalInfo.socialLinks.facebook,
-      color: 'hover:bg-blue-800',
+      name: 'X',
+      icon: faXTwitter,
+      url: personalInfo.socialLinks.X,
+      color: 'hover:bg-black',
     },
     {
       name: 'Instagram',
