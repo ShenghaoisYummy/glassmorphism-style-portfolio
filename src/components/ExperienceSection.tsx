@@ -17,7 +17,16 @@ const ExperienceCard = ({
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, delay: index * 0.2 }}
       viewport={{ once: true }}
-      className="experience-card glass-strong rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+      whileHover={{
+        y: -12,
+        scale: 1.03,
+        transition: { duration: 0.3 },
+      }}
+      className="experience-card bg-transparent backdrop-blur-xl border-3 border-white/60 rounded-2xl overflow-hidden shadow-2xl hover:shadow-4xl hover:border-white/80 transition-all duration-500 group transform-gpu"
+      style={{
+        boxShadow:
+          '0 30px 60px -12px rgba(0, 0, 0, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.6)',
+      }}
     >
       {/* Banner */}
       <div
@@ -60,14 +69,14 @@ const ExperienceCard = ({
       </div>
 
       {/* Content */}
-      <div className="p-6 bg-white/60 backdrop-blur-sm">
-        <h5 className="text-xl font-semibold text-gray-800 mb-2">
+      <div className="p-8 bg-transparent backdrop-blur-lg group-hover:bg-white/5 transition-all duration-500 border-t border-white/40">
+        <h5 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
           {experience.role}
         </h5>
-        <h6 className="text-sm font-medium text-gray-600 mb-3">
+        <h6 className="text-sm font-semibold text-gray-600 mb-4 group-hover:text-blue-500 transition-colors duration-300">
           {experience.duration}
         </h6>
-        <p className="text-gray-700 text-sm leading-relaxed">
+        <p className="text-gray-700 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300 font-medium">
           {experience.description}
         </p>
       </div>
@@ -77,7 +86,7 @@ const ExperienceCard = ({
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="page-scroll py-20 px-8">
+    <section id="experience" className="page-scroll py-24 px-8">
       <div className="container max-w-7xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -92,7 +101,7 @@ const ExperienceSection = () => {
           </span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={experience.id}

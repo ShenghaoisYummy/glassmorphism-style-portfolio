@@ -12,12 +12,12 @@ const RepoCard = ({ repo }: { repo: ProcessedRepo }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="project-card glass-strong rounded-xl p-6 hover:shadow-xl transition-all duration-300"
+      className="project-card bg-fuchsia-50/60 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl border border-slate-200/50 transition-all duration-300"
     >
       {/* Header */}
       <div className="flex items-center mb-4">
         <svg
-          className="w-4 h-4 text-gray-600 mr-2 flex-shrink-0"
+          className="w-4 h-4 text-slate-500 mr-2 flex-shrink-0"
           viewBox="0 0 16 16"
           fill="currentColor"
         >
@@ -30,7 +30,7 @@ const RepoCard = ({ repo }: { repo: ProcessedRepo }) => {
           href={repo.html_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold text-blue-600 hover:text-blue-800 transition-colors truncate"
+          className="font-semibold text-slate-800 hover:text-blue-600 transition-colors truncate"
         >
           {repo.name}
         </a>
@@ -52,12 +52,12 @@ const RepoCard = ({ repo }: { repo: ProcessedRepo }) => {
       )}
 
       {/* Description */}
-      <p className="text-gray-700 text-sm mb-4 line-clamp-3">
+      <p className="text-slate-600 text-sm mb-4 line-clamp-3">
         {repo.description || 'No description available'}
       </p>
 
       {/* Footer */}
-      <div className="flex items-center justify-between text-xs text-gray-600">
+      <div className="flex items-center justify-between text-xs text-slate-500">
         <div className="flex items-center space-x-4">
           {/* Language */}
           {repo.language && (
@@ -74,7 +74,7 @@ const RepoCard = ({ repo }: { repo: ProcessedRepo }) => {
           {repo.stargazers_count > 0 && (
             <div className="flex items-center">
               <svg
-                className="w-3 h-3 mr-1"
+                className="w-3 h-3 mr-1 text-slate-500"
                 fill="currentColor"
                 viewBox="0 0 16 16"
               >
@@ -91,7 +91,7 @@ const RepoCard = ({ repo }: { repo: ProcessedRepo }) => {
           {repo.forks > 0 && (
             <div className="flex items-center">
               <svg
-                className="w-3 h-3 mr-1"
+                className="w-3 h-3 mr-1 text-slate-500"
                 fill="currentColor"
                 viewBox="0 0 16 16"
               >

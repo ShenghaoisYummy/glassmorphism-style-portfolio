@@ -28,7 +28,7 @@ const SkillsSection = () => {
           </motion.div>
 
           {/* Content */}
-          <div className="flex-1 max-w-2xl">
+          <div className="flex-1 max-w-2xl bg-transparent backdrop-blur-lg border border-white/30 border-t-white/50 border-l-white/50 rounded-2xl shadow-xl p-8 lg:p-12">
             {/* SVG Filter for marker effect */}
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -41,7 +41,6 @@ const Header = () => {
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'blog', label: 'Blog', external: true, url: personalInfo.blogUrl },
-    { id: 'contact', label: 'Contact' },
   ];
 
   const handleNavClick = (id: string, external?: boolean, url?: string) => {
@@ -64,9 +63,9 @@ const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="mb-8"
+      className="fixed top-6 left-0 right-0 z-50 px-12"
     >
-      <div className="flex justify-between items-center">
+      <div className="backdrop-blur-lg bg-white/40 border border-white/25 border-t-white/50 border-l-white/50 rounded-2xl shadow-xl px-8 py-4 flex justify-between items-center w-full max-w-[calc(100%-160px)] mx-auto">
         <a
           href="#top"
           className="text-2xl font-semibold text-gray-800 hover:text-blue-600 transition-colors cursor-pointer"
@@ -104,7 +103,7 @@ const Header = () => {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                       />
                     </svg>
                   )}

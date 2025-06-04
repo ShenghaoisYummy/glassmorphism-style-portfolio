@@ -13,7 +13,7 @@ const HeroSection = () => {
       <div className="container max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Content */}
-          <div className="flex-1 space-y-8">
+          <div className="flex-1 space-y-8 bg-white/0 backdrop-blur-lg border border-white/0 border-t-white/0 border-l-white/0 rounded-2xl shadow-xl p-8 lg:p-12">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="flex gap-4"
+              className="flex gap-6 mt-4"
             >
               <button
                 onClick={() => {
@@ -47,13 +47,13 @@ const HeroSection = () => {
                     block: 'center',
                   });
                 }}
-                className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                className="text-lg text-white font-medium bg-gradient-to-r from-blue-500 to-purple-600 px-10 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 Contact Me
               </button>
               <button
                 onClick={() => window.open('/resume.pdf', '_blank')}
-                className="px-8 py-3 border-2 border-blue-500 text-blue-500 rounded-lg font-medium hover:bg-blue-500 hover:text-white transition-all duration-300"
+                className="text-lg text-blue-600 font-medium bg-white hover:bg-gray-50 border-2 border-blue-500 px-10 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 Resume
               </button>
