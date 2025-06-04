@@ -75,6 +75,7 @@ const HeroSection = () => {
                 width={80}
                 height={80}
                 className="floating-shape"
+                style={{ width: 'auto', height: '80px' }}
               />
             </motion.div>
 
@@ -90,6 +91,7 @@ const HeroSection = () => {
                 width={64}
                 height={64}
                 className="floating-shape"
+                style={{ width: 'auto', height: '64px' }}
               />
             </motion.div>
 
@@ -105,6 +107,7 @@ const HeroSection = () => {
                 width={64}
                 height={64}
                 className="floating-shape"
+                style={{ width: 'auto', height: '64px' }}
               />
             </motion.div>
 
@@ -135,6 +138,7 @@ const HeroSection = () => {
                 width={64}
                 height={64}
                 className="floating-shape"
+                style={{ width: 'auto', height: '64px' }}
               />
             </motion.div>
 

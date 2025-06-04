@@ -60,18 +60,32 @@ async function fetchWithCache(url: string): Promise<GitHubRepo> {
   }
 
   try {
-    const response = await fetch(url, {
-      headers: {
-        Accept: 'application/vnd.github.v3+json',
-        // Add GitHub token if available (for higher rate limits)
-        ...(process.env.GITHUB_TOKEN && {
-          Authorization: `token ${process.env.GITHUB_TOKEN}`,
-        }),
-      },
-    });
+    const headers: Record<string, string> = {
+      Accept: 'application/vnd.github.v3+json',
+      'User-Agent': 'glassFolio-portfolio',
+    };
+
+    // 确保正确设置 Authorization header
+    if (process.env.GITHUB_TOKEN) {
+      headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+    }
+
+    const response = await fetch(url, { headers });
 
     if (!response.ok) {
-      throw new Error(`GitHub API error: ${response.status}`);
+      if (response.status === 403) {
+        const remaining = response.headers.get('x-ratelimit-remaining');
+        const reset = response.headers.get('x-ratelimit-reset');
+        const resetDate = reset
+          ? new Date(parseInt(reset) * 1000).toLocaleString()
+          : 'unknown';
+        console.warn(
+          `GitHub API rate limit exceeded. Remaining: ${remaining}, Reset at: ${resetDate}`
+        );
+      }
+      throw new Error(
+        `GitHub API error: ${response.status} ${response.statusText}`
+      );
     }
 
     const data = (await response.json()) as GitHubRepo;
@@ -79,8 +93,8 @@ async function fetchWithCache(url: string): Promise<GitHubRepo> {
     return data;
   } catch (error) {
     console.error(`Failed to fetch ${url}:`, error);
-    // Return cached data if available, even if expired
     if (cached) {
+      console.warn('Using expired cache data due to API error');
       return cached.data;
     }
     throw error;
