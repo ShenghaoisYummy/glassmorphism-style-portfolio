@@ -91,29 +91,29 @@ VERCEL_PROJECT_ID=your_project_id
 ```
 glassFolio/
 ├── src/
-│   ├── app/                 # Next.js App Router
-│   │   ├── layout.tsx       # Root layout
-│   │   ├── page.tsx         # Home page
-│   │   └── globals.css      # Global styles
-│   ├── components/          # React components
-│   │   ├── Header.tsx       # Navigation header
-│   │   ├── HeroSection.tsx  # Landing section
-│   │   ├── SkillsSection.tsx# Skills showcase
+│   ├── app/                              # Next.js App Router
+│   │   ├── layout.tsx                    # Root layout
+│   │   ├── page.tsx                      # Home page
+│   │   └── globals.css                   # Global styles
+│   ├── components/                       # React components
+│   │   ├── Header.tsx                    # Navigation header
+│   │   ├── HeroSection.tsx               # Landing section
+│   │   ├── SkillsSection.tsx             # Skills showcase
 │   │   ├── ExperienceSection.tsx
 │   │   ├── ProjectsSection.tsx
 │   │   ├── ContactSection.tsx
 │   │   └── ScrollToTop.tsx
 │   ├── data/
-│   │   └── content.ts       # Content configuration
+│   │   └── content.ts                    # Content configuration
 │   └── lib/
-│       └── github.ts        # GitHub API integration
-├── content/                 # MDX content
-│   ├── blog/               # Blog posts
-│   └── projects/           # Project descriptions
-├── public/                 # Static assets
-│   └── assets/            # Images, icons
+│       └── github.ts                     # GitHub API integration
+├── content/                              # MDX content
+│   ├── blog/                             # Blog posts
+│   └── projects/                         # Project descriptions
+├── public/                               # Static assets
+│   └── assets/                           # Images, icons
 ├── .github/
-│   └── workflows/         # CI/CD pipelines
+│   └── workflows/                        # CI/CD pipelines
 └── package.json
 ```
 
