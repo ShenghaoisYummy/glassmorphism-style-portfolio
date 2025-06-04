@@ -37,17 +37,17 @@ export interface PersonalInfo {
 }
 
 export const personalInfo: PersonalInfo = {
-  name: 'Austin',
-  logo: 'Austin',
-  title: "Hi all, I'm Austin",
+  name: 'Shenghao',
+  logo: 'Shenghao',
+  title: "Hi all, I'm Shenghao",
   description:
     'I love software development, machine learning and deep learning. I know a little bit of Web Dev too and Flutter! Want to discuss regarding any project or just want to say a Hi? I am always available to listen you :)',
   blogUrl: 'https://your-blog-url.com', // Replace with your actual blog URL
   socialLinks: {
-    github: 'https://github.com/AustinXu',
-    linkedin: 'https://linkedin.com/in/austin-xu-0000000000',
-    facebook: 'https://facebook.com/austin',
-    instagram: 'https://instagram.com/austin',
+    github: 'https://github.com/ShenghaoisYummy',
+    linkedin: 'https://linkedin.com/in/your-linkedin-profile',
+    facebook: 'https://facebook.com/your-profile',
+    instagram: 'https://instagram.com/your-profile',
   },
 };
 
@@ -147,9 +147,9 @@ export const experiences: Experience[] = [
 ];
 
 export const projects: Project[] = [
-  { repo: 'AustinXu/glassFolio', featured: true },
-  { repo: 'AustinXu/Covid19-API' },
-  { repo: 'AustinXu/Fake-SpeedTest-Generator' },
-  { repo: 'AustinXu/Webd-Template-CodingWeekIITG' },
-  { repo: 'AustinXu/Youtube-UI-Clone' },
+  { repo: 'ShenghaoisYummy/glassmorphism-style-portfolio', featured: true },
+  { repo: 'ShenghaoisYummy/ai-schedule-assistant' },
+  { repo: 'ShenghaoisYummy/E-commerce-Chatbot' },
+  { repo: 'ShenghaoisYummy/Calendar_model' },
+  { repo: 'ShenghaoisYummy/Restore' },
 ];
