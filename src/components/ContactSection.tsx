@@ -18,10 +18,10 @@ const ContactSection = () => {
       className: 'linkedin',
     },
     {
-      name: 'Facebook',
-      icon: 'fab fa-facebook',
-      url: personalInfo.socialLinks.facebook,
-      className: 'facebook',
+      name: 'X',
+      icon: 'fab fa-x-twitter',
+      url: personalInfo.socialLinks.X,
+      className: 'x',
     },
     {
       name: 'Instagram',
