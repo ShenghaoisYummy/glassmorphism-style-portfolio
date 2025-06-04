@@ -22,6 +22,7 @@ const SkillsSection = () => {
               alt="Developer GIF"
               width={320}
               height={320}
+              unoptimized
               className="w-80 h-80 object-cover rounded-lg"
             />
           </motion.div>

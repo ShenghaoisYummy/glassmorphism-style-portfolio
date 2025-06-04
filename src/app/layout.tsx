@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 
@@ -13,8 +13,12 @@ export const metadata: Metadata = {
   description: 'Developer Portfolio centered around GlassMorphic UI',
   keywords:
     'Developer, Portfolio, HTML, CSS, JS, GlassMorphic, Glassmorphic, GlassMorphism, Glassmorphism, UI',
-  authors: [{ name: 'Austin Xu' }],
-  viewport: 'width=device-width, initial-scale=1.0',
+  authors: [{ name: 'AmreshSinha' }],
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
 };
 
 export default function RootLayout({

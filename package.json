@@ -10,25 +10,20 @@
     "lint:fix": "next lint --fix",
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "prepare": "husky install"
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@next/mdx": "^15.3.3",
-    "@react-three/drei": "^9.121.0",
-    "@react-three/fiber": "^8.18.1",
     "@tailwindcss/typography": "^0.5.15",
-    "@types/three": "^0.171.0",
     "framer-motion": "^11.15.0",
     "gray-matter": "^4.0.3",
     "next": "15.3.3",
     "next-mdx-remote": "^5.0.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "three": "^0.171.0"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -40,7 +35,7 @@
     "eslint-config-next": "15.3.3",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.11",
-    "postcss": "^8.5.11",
+    "postcss": "^8.4.49",
     "prettier": "^3.4.2",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"
