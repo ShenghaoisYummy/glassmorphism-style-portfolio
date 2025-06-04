@@ -37,17 +37,17 @@ export interface PersonalInfo {
 }
 
 export const personalInfo: PersonalInfo = {
-  name: 'Amresh',
-  logo: 'Amresh',
-  title: "Hi all, I'm Amresh",
+  name: 'Austin',
+  logo: 'Austin',
+  title: "Hi all, I'm Austin",
   description:
     'I love software development, machine learning and deep learning. I know a little bit of Web Dev too and Flutter! Want to discuss regarding any project or just want to say a Hi? I am always available to listen you :)',
   blogUrl: 'https://your-blog-url.com', // Replace with your actual blog URL
   socialLinks: {
-    github: 'https://github.com/AmreshSinha',
-    linkedin: 'https://linkedin.com/in/amresh-sinha',
-    facebook: 'https://facebook.com/amresh',
-    instagram: 'https://instagram.com/amresh',
+    github: 'https://github.com/AustinXu',
+    linkedin: 'https://linkedin.com/in/austin-xu-0000000000',
+    facebook: 'https://facebook.com/austin',
+    instagram: 'https://instagram.com/austin',
   },
 };
 
@@ -147,9 +147,9 @@ export const experiences: Experience[] = [
 ];
 
 export const projects: Project[] = [
-  { repo: 'AmreshSinha/glassFolio', featured: true },
-  { repo: 'AmreshSinha/Covid19-API' },
-  { repo: 'AmreshSinha/Fake-SpeedTest-Generator' },
-  { repo: 'AmreshSinha/Webd-Template-CodingWeekIITG' },
-  { repo: 'AmreshSinha/Youtube-UI-Clone' },
+  { repo: 'AustinXu/glassFolio', featured: true },
+  { repo: 'AustinXu/Covid19-API' },
+  { repo: 'AustinXu/Fake-SpeedTest-Generator' },
+  { repo: 'AustinXu/Webd-Template-CodingWeekIITG' },
+  { repo: 'AustinXu/Youtube-UI-Clone' },
 ];
