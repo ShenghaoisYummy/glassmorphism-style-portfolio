@@ -64,9 +64,9 @@ const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-3 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-180px)] max-w-7xl"
+      className="mb-8"
     >
-      <div className="backdrop-blur-lg bg-white/40 border border-white/25 border-t-white/50 border-l-white/50 rounded-2xl shadow-xl px-8 py-5 flex justify-between items-center">
+      <div className="flex justify-between items-center">
         <a
           href="#top"
           className="text-2xl font-semibold text-gray-800 hover:text-blue-600 transition-colors cursor-pointer"

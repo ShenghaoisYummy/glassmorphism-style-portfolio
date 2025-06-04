@@ -13,8 +13,8 @@ export default function Home() {
       <div className="fixed inset-0 bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 -z-10" />
 
       {/* Main Container */}
-      <div className="relative z-10 flex justify-center items-start min-h-screen pt-16">
-        <div className="w-full max-w-[calc(100%-100px)] min-h-[calc(100vh-280px)] bg-white/50 backdrop-blur-lg border border-white/25 border-t-white/50 border-l-white/50 rounded-2xl shadow-xl mx-12 my-8 p-12">
+      <div className="relative z-10 flex justify-center items-start min-h-screen">
+        <div className="w-full max-w-[calc(100%-100px)] min-h-[calc(100vh-140px)] bg-white/50 backdrop-blur-lg border border-white/25 border-t-white/50 border-l-white/50 rounded-2xl shadow-xl mx-12 my-8 p-12">
           {/* Header */}
           <Header />
 
