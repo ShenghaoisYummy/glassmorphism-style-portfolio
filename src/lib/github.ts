@@ -5,6 +5,7 @@ export interface GitHubRepo {
   stargazers_count: number;
   forks: number;
   language: string;
+  allLanguages?: string[]; // e.g. ["JavaScript", "TypeScript", "Python", …
   fork: boolean;
   source?: {
     html_url: string;
@@ -19,6 +20,7 @@ export interface ProcessedRepo {
   stargazers_count: number;
   forks: number;
   language: string;
+  allLanguages: string[]; // e.g. ["JavaScript", "TypeScript", "Python", …]
   languageColor: string;
   fork: boolean;
   source?: {
@@ -128,9 +130,10 @@ export async function getLanguageColors(): Promise<Record<string, string>> {
 
 export async function getGitHubRepo(repoName: string): Promise<ProcessedRepo> {
   try {
-    const [repoData, languageColors] = await Promise.all([
+    const [repoData, languageColors, languagesData] = await Promise.all([
       fetchWithCache(`https://api.github.com/repos/${repoName}`),
       getLanguageColors(),
+      fetchWithCache(`https://api.github.com/repos/${repoName}/languages`),
     ]);
 
     // Process emoji in description
@@ -141,6 +144,7 @@ export async function getGitHubRepo(repoName: string): Promise<ProcessedRepo> {
       // You can expand this with actual emoji mapping if needed
       return match; // For now, keep the text as is
     });
+    const allLanguages = Object.keys(languagesData || {});
 
     return {
       name: repoData.name,
@@ -150,6 +154,8 @@ export async function getGitHubRepo(repoName: string): Promise<ProcessedRepo> {
       forks: repoData.forks || 0,
       language: repoData.language || '',
       languageColor: languageColors[repoData.language] || '#858585',
+      allLanguages, // e.g. ["JavaScript", "TypeScript", "Python", …]
+
       fork: repoData.fork || false,
       source: repoData.source
         ? {
@@ -169,6 +175,7 @@ export async function getGitHubRepo(repoName: string): Promise<ProcessedRepo> {
       stargazers_count: 0,
       forks: 0,
       language: '',
+      allLanguages: [],
       languageColor: '#858585',
       fork: false,
     };
@@ -203,6 +210,7 @@ export async function getMultipleRepos(
           forks: 0,
           language: '',
           languageColor: '#858585',
+          allLanguages: [],
           fork: false,
         });
       }
