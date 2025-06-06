@@ -6,6 +6,9 @@ import { projects } from '@/data/content';
 import { getMultipleRepos, ProcessedRepo } from '@/lib/github';
 
 const RepoCard = ({ repo }: { repo: ProcessedRepo }) => {
+  // Get first 3 languages
+  const displayLanguages = repo.allLanguages.slice(0, 2);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -59,14 +62,26 @@ const RepoCard = ({ repo }: { repo: ProcessedRepo }) => {
       {/* Footer */}
       <div className="flex items-center justify-between text-xs text-slate-500">
         <div className="flex items-center space-x-4">
-          {/* Language */}
-          {repo.language && (
-            <div className="flex items-center">
-              <span
-                className="w-3 h-3 rounded-full mr-1"
-                style={{ backgroundColor: repo.languageColor }}
-              />
-              <span>{repo.language}</span>
+          {/* Languages - Show first 3 */}
+          {displayLanguages.length > 0 && (
+            <div className="flex items-center space-x-2">
+              {displayLanguages.map(lang => (
+                <div key={lang} className="flex items-center">
+                  <span
+                    className="w-3 h-3 rounded-full mr-1"
+                    style={{
+                      backgroundColor:
+                        repo.allLanguageColors[lang] || '#858585',
+                    }}
+                  />
+                  <span className="text-xs">{lang}</span>
+                </div>
+              ))}
+              {repo.allLanguages.length > 3 && (
+                <span className="text-xs text-slate-400">
+                  +{repo.allLanguages.length - 3} more
+                </span>
+              )}
             </div>
           )}
 

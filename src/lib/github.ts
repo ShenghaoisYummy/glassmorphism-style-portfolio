@@ -22,6 +22,7 @@ export interface ProcessedRepo {
   language: string;
   allLanguages: string[]; // e.g. ["JavaScript", "TypeScript", "Python", …]
   languageColor: string;
+  allLanguageColors: Record<string, string>;
   fork: boolean;
   source?: {
     html_url: string;
@@ -155,6 +156,7 @@ export async function getGitHubRepo(repoName: string): Promise<ProcessedRepo> {
       language: repoData.language || '',
       languageColor: languageColors[repoData.language] || '#858585',
       allLanguages, // e.g. ["JavaScript", "TypeScript", "Python", …]
+      allLanguageColors: languageColors,
 
       fork: repoData.fork || false,
       source: repoData.source
@@ -177,6 +179,7 @@ export async function getGitHubRepo(repoName: string): Promise<ProcessedRepo> {
       language: '',
       allLanguages: [],
       languageColor: '#858585',
+      allLanguageColors: {},
       fork: false,
     };
   }
@@ -211,6 +214,7 @@ export async function getMultipleRepos(
           language: '',
           languageColor: '#858585',
           allLanguages: [],
+          allLanguageColors: {},
           fork: false,
         });
       }
