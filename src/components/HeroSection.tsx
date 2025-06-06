@@ -162,14 +162,14 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 2 }}
-              className="relative z-20"
+              className="relative z-20 flex justify-end"
             >
               <Image
-                src="/assets/APS-OCTOCAT.png"
+                src="/assets/141749040820_.pic.jpg"
                 alt="Character"
-                width={400}
-                height={400}
-                className="max-w-full h-auto"
+                width={500}
+                height={500}
+                className="max-w-full h-auto rounded-full"
                 priority
               />
             </motion.div>

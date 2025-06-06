@@ -30,9 +30,20 @@ export interface ProcessedRepo {
   };
 }
 
-// Cache for API responses
-const cache = new Map<string, { data: GitHubRepo; timestamp: number }>();
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+// Define proper types for API responses
+type GitHubLanguagesResponse = Record<string, number>;
+
+interface CacheEntry<T> {
+  data: T;
+  timestamp: number;
+}
+
+// Cache for API responses with proper typing
+const cache = new Map<
+  string,
+  CacheEntry<GitHubRepo | GitHubLanguagesResponse>
+>();
+const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
 
 // Language colors fallback
 const DEFAULT_LANGUAGE_COLORS: Record<string, string> = {
@@ -54,12 +65,14 @@ const DEFAULT_LANGUAGE_COLORS: Record<string, string> = {
   Dockerfile: '#384d54',
 };
 
-async function fetchWithCache(url: string): Promise<GitHubRepo> {
+async function fetchWithCache<T extends GitHubRepo | GitHubLanguagesResponse>(
+  url: string
+): Promise<T> {
   const cacheKey = url;
   const cached = cache.get(cacheKey);
 
   if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
-    return cached.data;
+    return cached.data as T;
   }
 
   try {
@@ -85,20 +98,26 @@ async function fetchWithCache(url: string): Promise<GitHubRepo> {
         console.warn(
           `GitHub API rate limit exceeded. Remaining: ${remaining}, Reset at: ${resetDate}`
         );
+
+        // 如果有缓存数据，即使过期也使用它
+        if (cached) {
+          console.warn('Using expired cache data due to rate limit');
+          return cached.data as T;
+        }
       }
       throw new Error(
         `GitHub API error: ${response.status} ${response.statusText}`
       );
     }
 
-    const data = (await response.json()) as GitHubRepo;
+    const data = (await response.json()) as T;
     cache.set(cacheKey, { data, timestamp: Date.now() });
     return data;
   } catch (error) {
     console.error(`Failed to fetch ${url}:`, error);
     if (cached) {
       console.warn('Using expired cache data due to API error');
-      return cached.data;
+      return cached.data as T;
     }
     throw error;
   }
@@ -132,9 +151,11 @@ export async function getLanguageColors(): Promise<Record<string, string>> {
 export async function getGitHubRepo(repoName: string): Promise<ProcessedRepo> {
   try {
     const [repoData, languageColors, languagesData] = await Promise.all([
-      fetchWithCache(`https://api.github.com/repos/${repoName}`),
+      fetchWithCache<GitHubRepo>(`https://api.github.com/repos/${repoName}`),
       getLanguageColors(),
-      fetchWithCache(`https://api.github.com/repos/${repoName}/languages`),
+      fetchWithCache<GitHubLanguagesResponse>(
+        `https://api.github.com/repos/${repoName}/languages`
+      ),
     ]);
 
     // Process emoji in description
@@ -188,8 +209,8 @@ export async function getGitHubRepo(repoName: string): Promise<ProcessedRepo> {
 export async function getMultipleRepos(
   repoNames: string[]
 ): Promise<ProcessedRepo[]> {
-  // Process repositories in parallel but with rate limiting
-  const BATCH_SIZE = 3;
+  // 增加批处理延迟以减少速率限制
+  const BATCH_SIZE = 2; // 减少批大小
   const results: ProcessedRepo[] = [];
 
   for (let i = 0; i < repoNames.length; i += BATCH_SIZE) {
@@ -220,9 +241,9 @@ export async function getMultipleRepos(
       }
     });
 
-    // Small delay between batches to avoid rate limiting
+    // 增加批次间延迟
     if (i + BATCH_SIZE < repoNames.length) {
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise(resolve => setTimeout(resolve, 500)); // 增加到500ms
     }
   }
 
