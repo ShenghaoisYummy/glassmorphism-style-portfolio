@@ -7,7 +7,7 @@ import { getMultipleRepos, ProcessedRepo } from '@/lib/github';
 
 const RepoCard = ({ repo }: { repo: ProcessedRepo }) => {
   // Get first 3 languages
-  const displayLanguages = repo.allLanguages.slice(0);
+  const displayLanguages = repo.allLanguages.slice(0, 2);
 
   return (
     <motion.div
