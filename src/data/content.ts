@@ -42,7 +42,7 @@ export const personalInfo: PersonalInfo = {
   title: "Hi all, I'm Austin",
   description:
     'I love software development, machine learning and deep learning. I know a little bit of Web Dev too and Flutter! Want to discuss regarding any project or just want to say a Hi? I am always available to listen you :)',
-  blogUrl: 'https://github.com/ShenghaoisYummy', // Replace with your actual blog URL
+  blogUrl: 'https://personal-blog-jade-five.vercel.app/', // Replace with your actual blog URL
   socialLinks: {
     github: 'https://github.com/ShenghaoisYummy',
     linkedin: 'https://www.linkedin.com/in/austin-xu-272586160/',
