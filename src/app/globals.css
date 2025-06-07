@@ -42,6 +42,32 @@ body {
   border-radius: 10px;
 }
 
+/* Cyberpunk Text Effect - 只影响文字 */
+.cyberpunk-text {
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cyberpunk-text-glow 2s ease-in-out infinite;
+  text-shadow:
+    0 0 5px rgba(0, 255, 255, 0.5),
+    0 0 10px rgba(255, 0, 255, 0.3);
+  font-weight: 600;
+}
+
+@keyframes cyberpunk-text-glow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: hue-rotate(90deg);
+  }
+}
+
 /* Wave Animation */
 @keyframes wave-animation {
   0% {

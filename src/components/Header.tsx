@@ -91,7 +91,9 @@ const Header = () => {
                       : 'text-gray-700 hover:bg-white/30 hover:text-blue-600'
                   }`}
                 >
-                  {item.label}
+                  <span className={item.id === 'blog' ? 'cyberpunk-text' : ''}>
+                    {item.label}
+                  </span>
                   {item.external && (
                     <svg
                       className="inline ml-1 w-3 h-3"
