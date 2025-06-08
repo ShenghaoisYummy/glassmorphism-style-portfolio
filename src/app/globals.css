@@ -28,17 +28,17 @@ body {
   font-family: var(--font-poppins);
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Light Blue Theme */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #acb7e1;
+  background: #dbeafe;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4577af;
+  background: #3b82f6;
   border-radius: 10px;
 }
 
