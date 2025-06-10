@@ -41,7 +41,7 @@ export const personalInfo: PersonalInfo = {
   logo: 'Austin Xu',
   title: "Hi all, I'm Austin",
   description:
-    'I love software development, machine learning and deep learning. I know a little bit of Web Dev too and Flutter! Want to discuss regarding any project or just want to say a Hi? I am always available to listen you :)',
+    'I’m passionate about software engineering, AI, and ML. I also dabble in application development. Whether you’d like to brainstorm a project or simply say hello, I’m here, truly available and always eager to chat whenever you need. :)',
   blogUrl: 'https://personal-blog-jade-five.vercel.app/', // Replace with your actual blog URL
   socialLinks: {
     github: 'https://github.com/ShenghaoisYummy',
