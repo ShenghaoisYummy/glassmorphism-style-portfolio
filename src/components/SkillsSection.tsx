@@ -124,9 +124,9 @@ const SkillsSection = () => {
               className="space-y-4"
             >
               {[
-                'Develop highly interactive Front end / User Interfaces for your web and mobile applications',
-                'Create responsive and user-friendly web applications with modern frameworks',
-                'Build scalable backend systems and APIs for robust application architecture',
+                'Developed highly interactive front-end modules for integration platform using React.js, Redux, HTML/CSS and Tailwind CSS, delivering seamless web and mobile user experiences.',
+                'Created responsive, production-ready web applications with Next.js, React Hook Form and Zod, and deployed them on AWS EC2/S3 for scalable, low-latency hosting.',
+                'Built robust back-end systems and RESTful APIs with .NET Core and Node.js—complete with unit testing and GitHub Actions CI/CD pipelines—to ensure reliable, maintainable application architecture.',
               ].map((text, index) => (
                 <p
                   key={index}
