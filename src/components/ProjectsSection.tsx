@@ -15,7 +15,7 @@ const RepoCard = ({ repo }: { repo: ProcessedRepo }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="project-card bg-fuchsia-50/60 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl border border-slate-200/50 transition-all duration-300"
+      className="project-card w-full bg-fuchsia-50/60 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl border border-slate-200/50 transition-all duration-300"
     >
       {/* Header */}
       <div className="flex items-center mb-4">

@@ -21,7 +21,7 @@ const ExperienceCard = ({
         scale: 1.03,
         transition: { duration: 0.3 },
       }}
-      className="experience-card bg-transparent backdrop-blur-xl border-3 border-white/60 rounded-2xl overflow-hidden shadow-2xl hover:shadow-4xl hover:border-white/80 transition-all duration-500 group transform-gpu"
+      className="experience-card w-full bg-transparent backdrop-blur-xl border-3 border-white/60 rounded-2xl overflow-hidden shadow-2xl hover:shadow-4xl hover:border-white/80 transition-all duration-500 group transform-gpu"
       style={{
         boxShadow:
           '0 30px 60px -12px rgba(0, 0, 0, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.6)',
@@ -82,7 +82,7 @@ const ExperienceSection = () => {
           </span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-0 md:px-4">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={experience.id}
