@@ -63,9 +63,9 @@ const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-6 left-0 right-0 z-50 px-12"
+      className="fixed top-4 sm:top-6 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12"
     >
-      <div className="backdrop-blur-lg bg-white/40 border border-white/25 border-t-white/50 border-l-white/50 rounded-2xl shadow-xl px-8 py-4 flex justify-between items-center w-full max-w-[calc(100%-160px)] mx-auto">
+      <div className="backdrop-blur-lg bg-white/40 border border-white/25 border-t-white/50 border-l-white/50 rounded-2xl shadow-xl px-8 py-4 flex justify-between items-center w-full max-w-full sm:max-w-[calc(100%-96px)] lg:max-w-[calc(100%-160px)] mx-auto">
         <a
           href="#top"
           className="text-2xl font-semibold text-gray-800 hover:text-blue-600 transition-colors cursor-pointer"
@@ -78,7 +78,13 @@ const Header = () => {
         </a>
 
         <nav>
-          <ul className="flex space-x-6">
+          <ul
+            className="
+              flex flex-wrap md:flex-nowrap
+              gap-x-4 gap-y-2 md:gap-x-6
+              justify-center md:justify-start
+            "
+          >
             {navItems.map(item => (
               <li key={item.id}>
                 <button

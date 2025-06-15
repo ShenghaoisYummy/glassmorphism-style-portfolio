@@ -43,7 +43,7 @@ const SocialSidebar = () => {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.3 }}
-      className="fixed right-8 top-1/2 transform -translate-y-1/2 z-40"
+      className="fixed right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-40 hidden md:block"
     >
       <div className="flex flex-col space-y-6">
         {socialLinks.map((social, index) => (

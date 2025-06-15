@@ -16,8 +16,12 @@ export default function Home() {
       {/* Social Sidebar */}
       <SocialSidebar />
       {/* Main Container */}
-      <div className="relative z-10 flex justify-center items-start min-h-screen pt-28">
-        <div className="w-full max-w-[calc(100%-160px)] min-h-[calc(100vh-180px)] bg-white/50 backdrop-blur-lg border border-white/25 border-t-white/50 border-l-white/50 rounded-2xl shadow-xl mx-12 my-8 p-16">
+      <div className="relative z-10 flex justify-center items-start min-h-screen pt-24 sm:pt-28 px-4">
+        <div
+          className="w-full max-w-full sm:max-w-[calc(100%-96px)] lg:max-w-[calc(100%-160px)] min-h-[calc(100vh-180px)]
+                        bg-white/50 backdrop-blur-lg border border-white/25 border-t-white/50 border-l-white/50 rounded-2xl shadow-xl
+                        mx-0 sm:mx-6 lg:mx-12 my-6 sm:my-8 p-6 sm:p-10 lg:p-16"
+        >
           {/* Page Sections */}
           <div className="space-y-0">
             <HeroSection />
