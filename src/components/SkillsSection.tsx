@@ -7,7 +7,7 @@ import { skills } from '@/data/content';
 const SkillsSection = () => {
   return (
     <section id="about" className="page-scroll py-20 px-8">
-      <div className="container max-w-7xl mx-auto">
+      <div className="container mx-auto max-w-full lg:max-w-7xl">
         <div className="flex flex-col lg:flex-row items-center justify-around gap-12">
           {/* Animated GIF */}
           <motion.div

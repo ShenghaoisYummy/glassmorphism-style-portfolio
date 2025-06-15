@@ -150,7 +150,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="page-scroll py-20 px-8">
-      <div className="container max-w-7xl mx-auto">
+      <div className="container mx-auto max-w-full lg:max-w-7xl">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
