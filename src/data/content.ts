@@ -165,7 +165,8 @@ export const experiences: Experience[] = [
     company: 'Canva',
     role: 'Software Engineer',
     duration: 'Maybe in the future',
-    description: 'To be updated',
+    description:
+      'Equipped with deep expertise in .NET Core, React, and AWS, I’m poised to drive Canva’s next-gen AI design features—delivering seamless, personalized experiences to millions of creators. Architect cloud-native microservices, optimize real-time rendering pipelines, and lead cross-disciplinary innovation sprints.',
     logo: '',
     background:
       'linear-gradient(90deg,' +
@@ -179,7 +180,8 @@ export const experiences: Experience[] = [
     company: 'Atlassian',
     role: 'Software Engineer',
     duration: 'Maybe in the future',
-    description: 'To be updated',
+    description:
+      'Leveraging strong foundations in distributed systems and DevOps, I’m ready to scale Atlassian’s collaboration platform—boosting global team productivity by over 50%. Design fault-tolerant architectures, automate end-to-end CI/CD workflows, and contribute high-impact open-source integrations.',
     logo: '',
     background: '#0052CC',
   },
