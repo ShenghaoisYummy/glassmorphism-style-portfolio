@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { experiences, Experience } from '@/data/content';
 
 const ExperienceCard = ({
@@ -36,38 +35,19 @@ const ExperienceCard = ({
         {/* Blurred Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20 backdrop-blur-sm" />
 
-        {/* Company Logo/SVG */}
-        <div className="relative z-10 p-6 flex items-center justify-center h-36">
-          {experience.logoType === 'svg' && experience.svgContent ? (
-            <div
-              className="w-32 h-8"
-              dangerouslySetInnerHTML={{ __html: experience.svgContent }}
-            />
-          ) : (
-            <div className="relative">
-              <Image
-                src={experience.logo}
-                alt={experience.company}
-                width={120}
-                height={40}
-                className="object-contain filter brightness-0 invert"
-              />
-            </div>
-          )}
-        </div>
-
-        {/* Company Logo Image (Background) */}
-        <div className="absolute bottom-4 right-4 w-16 h-16 rounded-full overflow-hidden opacity-80">
-          <Image
-            src={experience.logo}
-            alt={experience.company}
-            width={64}
-            height={64}
-            className="object-cover w-full h-full"
-          />
-        </div>
+        {/* Company name (text-based title) */}
+        <span
+          className="
+          relative z-10 mb-14
+          text-lg sm:text-xl lg:text-2xl
+          font-serif font-extrabold tracking-wide
+          text-white/90
+          drop-shadow-md
+        "
+        >
+          {experience.company}
+        </span>
       </div>
-
       {/* Content */}
       <div className="p-8 bg-transparent backdrop-blur-lg group-hover:bg-white/5 transition-all duration-500 border-t border-white/40">
         <h5 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
