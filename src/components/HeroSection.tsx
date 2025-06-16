@@ -3,8 +3,17 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { personalInfo } from '@/data/content';
+import { useState } from 'react';
+import dynamic from 'next/dynamic';
+
+// lazy-load contact modal to avoid initial bundle increase
+const ContactModal = dynamic(() => import('@/components/ContactModal'), {
+  ssr: false,
+});
 
 const HeroSection = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <section
       id="top"
@@ -40,13 +49,7 @@ const HeroSection = () => {
               className="flex gap-6 mt-4"
             >
               <button
-                onClick={() => {
-                  const element = document.getElementById('contact');
-                  element?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center',
-                  });
-                }}
+                onClick={() => setOpen(true)}
                 className="text-lg text-white font-medium bg-gradient-to-r from-blue-500 to-purple-600 px-10 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 Contact Me
@@ -176,6 +179,9 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* 弹窗组件 */}
+      <ContactModal isOpen={open} onClose={() => setOpen(false)} />
     </section>
   );
 };
