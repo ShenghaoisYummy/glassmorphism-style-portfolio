@@ -6,7 +6,7 @@ import { skills } from '@/data/content';
 
 const SkillsSection = () => {
   return (
-    <section id="about" className="page-scroll py-20 px-8">
+    <section id="about" className="page-scroll py-20 px-8 ">
       <div className="container mx-auto max-w-full lg:max-w-7xl">
         <div className="flex flex-col lg:flex-row items-center justify-around gap-12">
           {/* Animated GIF */}
@@ -29,7 +29,7 @@ const SkillsSection = () => {
           </motion.div>
 
           {/* Content */}
-          <div className="flex-1 max-w-2xl bg-transparent backdrop-blur-lg border border-white/30 border-t-white/50 border-l-white/50 rounded-2xl shadow-xl p-8 lg:p-12">
+          <div className="flex-1 w-full bg-transparent backdrop-blur-lg border border-white/30 border-t-white/50 border-l-white/50 rounded-2xl shadow-xl p-8 lg:p-12">
             {/* SVG Filter for marker effect */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
