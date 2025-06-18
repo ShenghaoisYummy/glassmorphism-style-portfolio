@@ -2,6 +2,7 @@ export interface GitHubRepo {
   name: string;
   description: string;
   html_url: string;
+  homepage: string | null;
   stargazers_count: number;
   forks: number;
   language: string;
@@ -17,6 +18,7 @@ export interface ProcessedRepo {
   name: string;
   description: string;
   html_url: string;
+  homepage: string | null;
   stargazers_count: number;
   forks: number;
   language: string;
@@ -172,13 +174,13 @@ export async function getGitHubRepo(repoName: string): Promise<ProcessedRepo> {
       name: repoData.name,
       description,
       html_url: repoData.html_url,
+      homepage: repoData.homepage,
       stargazers_count: repoData.stargazers_count || 0,
       forks: repoData.forks || 0,
       language: repoData.language || '',
       languageColor: languageColors[repoData.language] || '#858585',
       allLanguages, // e.g. ["JavaScript", "TypeScript", "Python", …]
       allLanguageColors: languageColors,
-
       fork: repoData.fork || false,
       source: repoData.source
         ? {
@@ -195,6 +197,7 @@ export async function getGitHubRepo(repoName: string): Promise<ProcessedRepo> {
       name: repoName.split('/')[1] || repoName,
       description: 'Repository information unavailable',
       html_url: `https://github.com/${repoName}`,
+      homepage: null,
       stargazers_count: 0,
       forks: 0,
       language: '',
@@ -230,6 +233,7 @@ export async function getMultipleRepos(
           name: repoName.split('/')[1] || repoName,
           description: 'Repository information unavailable',
           html_url: `https://github.com/${repoName}`,
+          homepage: null,
           stargazers_count: 0,
           forks: 0,
           language: '',

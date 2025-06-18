@@ -6,29 +6,19 @@ import { projects } from '@/data/content';
 import { getMultipleRepos, ProcessedRepo } from '@/lib/github';
 
 const RepoCard = ({ repo }: { repo: ProcessedRepo }) => {
-  // Get first 3 languages
-  const displayLanguages = repo.allLanguages.slice(0, 2);
+  // Get languages to display (first 3)
+  const displayLanguages = repo.allLanguages.slice(0, 3);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="project-card w-full bg-fuchsia-50/60 backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-xl border border-slate-200/50 transition-all duration-300"
+      className="project-card bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl shadow-lg p-6 flex flex-col h-full"
     >
-      {/* Header */}
-      <div className="flex items-center mb-4">
-        <svg
-          className="w-4 h-4 text-slate-500 mr-2 flex-shrink-0"
-          viewBox="0 0 16 16"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"
-          />
-        </svg>
+      {/* Header with title and demo button side by side */}
+      <div className="flex items-center justify-between mb-2">
         <a
           href={repo.html_url}
           target="_blank"
@@ -37,6 +27,38 @@ const RepoCard = ({ repo }: { repo: ProcessedRepo }) => {
         >
           {repo.name}
         </a>
+
+        {/* Demo Button - Only show if homepage exists */}
+        {repo.homepage && (
+          <a
+            href={repo.homepage}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-2 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition-colors ml-2"
+          >
+            <svg
+              className="w-3 h-3 mr-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              />
+            </svg>
+            Demo
+          </a>
+        )}
       </div>
 
       {/* Fork Info */}
@@ -60,7 +82,7 @@ const RepoCard = ({ repo }: { repo: ProcessedRepo }) => {
       </p>
 
       {/* Footer */}
-      <div className="flex items-center justify-between text-xs text-slate-500">
+      <div className="flex items-center justify-between text-xs text-slate-500 mt-auto">
         <div className="flex items-center space-x-4">
           {/* Languages - Show first 3 */}
           {displayLanguages.length > 0 && (
