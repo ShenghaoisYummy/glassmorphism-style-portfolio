@@ -188,8 +188,8 @@ export const experiences: Experience[] = [
 ];
 
 export const projects: Project[] = [
-  { repo: 'ShenghaoisYummy/glassmorphism-style-portfolio', featured: true },
   { repo: 'ShenghaoisYummy/E-commerce-Chatbot' },
+  { repo: 'ShenghaoisYummy/glassmorphism-style-portfolio', featured: true },
   { repo: 'ShenghaoisYummy/Restore' },
   { repo: 'ShenghaoisYummy/airbnb_clone' },
   { repo: 'ShenghaoisYummy/ai-schedule-assistant' },
