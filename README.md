@@ -2,6 +2,10 @@
 
 A stunning, modern developer portfolio built with **Next.js 14**, featuring glassmorphism design, dynamic GitHub integration, and scalable content management.
 
+## Preview
+
+<img width="1392" height="755" alt="Screenshot 2025-09-10 at 13 24 37" src="https://github.com/user-attachments/assets/96e4803c-6437-4253-bc9b-89f151a135c1" />
+
 ## ✨ Features
 
 ### 🎨 **Modern Design**
